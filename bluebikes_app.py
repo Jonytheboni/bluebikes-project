@@ -340,16 +340,6 @@ def show_map(df):
         tooltip={"text": "{start station name}\nTrips: {trip_count}"},
     ))
 
-    st.markdown("---")
-    st.subheader("Top 10 Stations")
-
-    # #[ITERLOOP] – build the table row by row
-    station_list = []
-    for rank, (name, count) in enumerate(top_start.head(10).items(), start=1):
-        station_list.append({"Rank": rank, "Station": name, "Trips": f"{count:,}"})
-    st.table(pd.DataFrame(station_list))
-
-
 def show_patterns(df):
     """Show hourly ride patterns split by user type."""
     st.title("When Do People Ride?")
