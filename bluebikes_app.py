@@ -244,7 +244,7 @@ def show_stations(df):
     col1.success(f"Busiest: {busiest}")
     col2.info(f"Least busy: {quietest}")
 
-    n = st.slider("How many stations to show?", min_value=5, max_value=20, value=10)
+    n = st.slider("Select how many stations you want the graph to show:", min_value=5, max_value=20, value=10)
 
     # #[FUNCCALL2] – calling get_top_stations here
     top_start, top_end = get_top_stations(df, n=n)
