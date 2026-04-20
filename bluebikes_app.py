@@ -399,7 +399,39 @@ def show_patterns(df):
     st.info(f"Peak hour overall: {peak_hour}:00 – {peak_hour + 1}:00")
 
 
-#  MAIN
+def show_data_explorer(df):
+    """Data Explorer page with a pivot table of stations and their average trip duration."""
+    st.title("Data Explorer")
+    st.write(
+        "This page shows every Blue Bikes station along with the average trip duration "
+        "for rides that started there, sorted alphabetically. "
+        "Use the sidebar filters to explore how different rider types or trip lengths "
+        "affect the averages."
+    )
+
+    # #[PIVOTTABLE] – pivot table of average duration per station from raw data
+    st.subheader("Average Trip Duration per Station")
+    st.write("Stations are listed in alphabetical order. Average duration is calculated from the filtered dataset.")
+
+    pivot = df.groupby("start station name")["duration_min"].mean().reset_index()
+    pivot.columns = ["Station", "Avg Duration (min)"]
+
+    # #[SORT] – sort alphabetically by station name
+    pivot = pivot.sort_values("Station", ascending=True).reset_index(drop=True)
+
+    # #[LISTCOMP] – format the duration column using list comprehension
+    pivot["Avg Duration"] = [format_duration(m) for m in pivot["Avg Duration (min)"]]
+
+    # Drop the raw minutes column, only show formatted duration
+    pivot = pivot.drop(columns=["Avg Duration (min)"])
+
+    # Set index to start at 1
+    pivot.index = range(1, len(pivot) + 1)
+
+    st.dataframe(pivot, use_container_width=True, height=500)
+
+    st.markdown(f"Showing **{len(pivot)}** stations total.")
+
 
 def main():
     """Main function – sets up the page, sidebar, loads data, and routes to pages."""
