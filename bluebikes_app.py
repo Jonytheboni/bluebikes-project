@@ -276,7 +276,7 @@ def show_stations(df):
     st.subheader("Stations with the Longest Average Trip Duration")
 
     # #[LISTCOMP] – list comprehension to format the duration column for display
-    top20 = summary["pivot"].nlargest(20, "trip_count").copy()
+    top20 = summary["pivot"].nlargest(20, "avg_duration_min").copy()
     top20["avg_duration_formatted"] = [format_duration(m) for m in top20["avg_duration_min"]]
     top20["trip_count"] = top20["trip_count"].astype(int)
 
