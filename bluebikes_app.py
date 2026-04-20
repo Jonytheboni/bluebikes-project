@@ -285,6 +285,7 @@ def show_stations(df):
         "trip_count": "Total Trips",
         "avg_duration_formatted": "Avg Duration",
     })
+    display_df["Total Trips"] = display_df["Total Trips"].astype(str)
     st.dataframe(display_df.reset_index(drop=True), use_container_width=True)
 
 
