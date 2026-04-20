@@ -406,11 +406,12 @@ def main():
     )
 
     # #[ST3] – sidebar with logo, navigation radio buttons, and global filters
-    st.sidebar.image(
-        "https://upload.wikimedia.org/wikipedia/en/5/5c/Bluebikes_logo.svg",
-        use_container_width=True,
-    )
-    st.sidebar.title("Blue Bikes Explorer")
+    st.sidebar.markdown("""
+        <div style='text-align: center; padding: 10px;'>
+            <h1 style='color: #1565C0; font-size: 28px;'>🚲 Blue Bikes</h1>
+            <p style='color: #555; font-size: 14px;'>Boston Bike Share Explorer</p>
+        </div>
+    """, unsafe_allow_html=True)
     st.sidebar.write("September 2020 ride data from Boston.")
 
     page = st.sidebar.radio(
