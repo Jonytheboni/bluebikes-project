@@ -288,10 +288,10 @@ def show_stations(df):
 
 
 def show_map(df):
-    """Show the PyDeck map of station locations with trip volume as dot size."""
+    """Show the PyDeck map of station locations."""
     st.title("Map of Ride Start Locations")
     st.write(
-        "Each dot is a Blue Bikes station. Bigger dots mean more trips started there. "
+        "Each dot is a Blue Bikes station."
         "Scroll around to see the station name and trip count."
     )
 
