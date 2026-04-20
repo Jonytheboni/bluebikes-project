@@ -93,8 +93,6 @@ def get_station_summary(df):
     Build a pivot table of trips and average duration per start station.
     Returns a dictionary with the full pivot and the top 10 stations.
     """
-    # Remove outliers – trips over 3 hours are likely errors or stolen bikes
-    df = df[df["duration_min"] <= 180]
     summary = {}
 
     # #[PIVOTTABLE] – pivot table showing mean duration and trip count per station
