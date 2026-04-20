@@ -286,7 +286,8 @@ def show_stations(df):
         "avg_duration_formatted": "Avg Duration",
     })
     display_df["Total Trips"] = display_df["Total Trips"].astype(str)
-    st.dataframe(display_df.reset_index(drop=True), use_container_width=True)
+    display_df.index = range(1, len(display_df) + 1)
+    st.dataframe(display_df, use_container_width=True)
 
 
 def show_map(df):
