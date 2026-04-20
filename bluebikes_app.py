@@ -237,8 +237,9 @@ def show_stations(df):
     summary = get_station_summary(df)
 
     # #[MAXMIN] – find the busiest and quietest stations
-    busiest  = summary["pivot"].loc[summary["pivot"]["trip_count"].idxmax(), "start station name"]
-    quietest = summary["pivot"].loc[summary["pivot"]["trip_count"].idxmin(), "start station name"]
+    trip_counts = df["start station name"].value_counts()
+    busiest  = trip_counts.idxmax()
+    quietest = trip_counts.idxmin()
 
     col1, col2 = st.columns(2)
     col1.success(f"Busiest: {busiest}")
