@@ -402,8 +402,8 @@ def show_patterns(df):
 
 
 def show_data_explorer(df):
-    """Data Explorer page with a pivot table of stations and their average trip duration."""
-    st.title("Data Explorer")
+    """ A data explorer page with a pivot table that lets you lookup the stations and their average trip duration."""
+    st.title("Duratio Lookup")
     st.write(
         "This page shows every Blue Bikes station along with the average trip duration "
         "for rides that started there, sorted alphabetically. "
@@ -455,7 +455,7 @@ def main():
 
     page = st.sidebar.radio(
         "Navigate to:",
-        ["Overview", "Station Analysis", "Map", "Ride Patterns", "Data Explorer"],
+        ["Overview", "Station Analysis", "Map", "Ride Patterns", "Duration Lookup"],
     )
 
     st.sidebar.markdown("---")
@@ -492,7 +492,7 @@ def main():
         show_map(df)
     elif page == "Ride Patterns":
         show_patterns(df)
-    elif page == "Data Explorer":
+    elif page == "Duration Lookup":
         show_data_explorer(df)
 
 if __name__ == "__main__":
