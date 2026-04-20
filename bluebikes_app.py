@@ -306,7 +306,7 @@ def show_map(df):
                 "ScatterplotLayer",
                 data=map_df,
                 get_position=["start station longitude", "start station latitude"],
-                get_color=[21, 101, 192, 180],
+                get_color=[255, 0, 0, 255],
                 get_radius=300,
                 pickable=True,
             )
