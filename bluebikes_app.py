@@ -47,7 +47,7 @@ def load_data(file_id):
     df["duration_min"] = df["tripduration"] / 60
 
     # Parse the starttime column – format="mixed" handles slight variations in the timestamps  #[COLUMNS]
-    df["starttime"] = pd.to_datetime(df["starttime"], format="mixed", dayfirst=False, errors="coerce")
+    df["starttime"] = pd.to_datetime(df["starttime"], format="%Y-%m-%d %H:%M:%S.%f", errors="coerce"))
 
     # Pull out day of week and hour so we can group by them later  #[COLUMNS]
     df["day_of_week"] = df["starttime"].dt.day_name()
