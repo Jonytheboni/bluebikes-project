@@ -143,7 +143,7 @@ def show_overview(df):
 
     # #[CHART1] – vertical bar chart with custom colors, labels, and legend
     st.subheader("Trips by Day of the Week")
-    st.write("I wanted to know if people would ride more on weekdays or weekends.")
+    st.write("I wanted to know if people would ride more on weekdays or weekends. The following graph shows the results I found.")
 
     # #[SORT] – reindex by DAY_ORDER to get Mon-Sun left to right
     day_counts = df["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
