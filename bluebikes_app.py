@@ -364,7 +364,7 @@ def show_patterns(df):
     st.pyplot(fig3)
 
     st.write(
-        "Subscribers have clear spikes around 8 AM and 5-6 PM — classic commute times. "
+        "Subscribers have clear spikes around 8 AM and 5-6 PM, which are common commute times. "
         "Customers are more active in the afternoon with no real commute pattern, "
         "which lines up with them being recreational or tourist riders."
     )
