@@ -405,7 +405,7 @@ def show_data_explorer(df):
     st.write(
         "This page shows every Blue Bikes station along with the average trip duration "
         "for rides that started there, sorted alphabetically. "
-        "Use the sidebar filters to explore how different rider types or trip lengths "
+        "You may use the sidebar filters to explore how different riders' types or trip lengths "
         "affect the averages."
     )
 
