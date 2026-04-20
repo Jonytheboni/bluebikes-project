@@ -278,6 +278,7 @@ def show_stations(df):
     # #[LISTCOMP] – list comprehension to format the duration column for display
     top20 = summary["pivot"].nlargest(20, "trip_count").copy()
     top20["avg_duration_formatted"] = [format_duration(m) for m in top20["avg_duration_min"]]
+    top20["trip_count"] = top20["trip_count"].astype(int)
 
     display_df = top20[["start station name", "trip_count", "avg_duration_formatted"]].rename(columns={
         "start station name": "Station",
