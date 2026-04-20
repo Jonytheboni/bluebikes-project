@@ -411,7 +411,7 @@ def show_data_explorer(df):
 
     # #[PIVOTTABLE] – pivot table of average duration per station from raw data
     st.subheader("Average Trip Duration per Station")
-    st.write("Stations are listed in alphabetical order. Average duration is calculated from the filtered dataset.")
+    st.write("Stations are listed in alphabetical order.")
 
     pivot = df.groupby("start station name")["duration_min"].mean().reset_index()
     pivot.columns = ["Station", "Avg Duration (min)"]
