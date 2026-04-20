@@ -403,7 +403,7 @@ def show_patterns(df):
 
 def show_data_explorer(df):
     """ A data explorer page with a pivot table that lets you lookup the stations and their average trip duration."""
-    st.title("Duratio Lookup")
+    st.title("Duration Lookup")
     st.write(
         "This page shows every Blue Bikes station along with the average trip duration "
         "for rides that started there, sorted alphabetically. "
