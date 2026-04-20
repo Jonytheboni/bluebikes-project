@@ -287,7 +287,7 @@ def show_map(df):
     map_df = map_df.sort_values("trip_count", ascending=False)
 
     # Scale dot size based on trip volume
-    map_df["radius"] = map_df["trip_count"] / map_df["trip_count"].max() * 800 +200
+    map_df["radius"] = map_df["trip_count"] / map_df["trip_count"].max() * 2000 + 500
 
     # #[MAP] – PyDeck ScatterplotLayer, pickable so tooltip shows on hover
     layer = pdk.Layer(
@@ -305,8 +305,8 @@ def show_map(df):
     view_state = pdk.ViewState(
         latitude=42.358,
         longitude=-71.095,
-        zoom=12.5,
-        pitch=30,
+        zoom=11,
+        pitch=0,
     )
 
     tooltip = {
