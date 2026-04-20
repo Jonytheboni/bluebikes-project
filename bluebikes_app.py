@@ -298,7 +298,7 @@ def show_map(df):
         get_fill_color=[21, 101, 192, 180],
         get_line_color=[255, 255, 255],
         line_width_min_pixels=2,
-        radiusMinPixels=5
+        radiusMinPixels=5,
         pickable=True,
     )
 
