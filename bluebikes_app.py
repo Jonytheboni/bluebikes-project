@@ -290,12 +290,29 @@ def show_map(df):
     map_df["radius"] = map_df["trip_count"] / map_df["trip_count"].max() * 2000 + 500
 
     # #[MAP] – PyDeck ScatterplotLayer, pickable so tooltip shows on hover
-    map_df = map_df.rename(columns={
-        "start station latitude": "lat",
-        "start station longitude": "lon",
-    })
-    map_df = map_df.dropna(subset=["lat", "lon"])
-    st.map(map_df, latitude="lat", longitude="lon")
+    # #[MAP] – PyDeck ScatterplotLayer with tooltip
+    map_df = map_df.dropna(subset=["start station latitude", "start station longitude"])
+
+    st.pydeck_chart(pdk.Deck(
+        map_style="road",
+        initial_view_state=pdk.ViewState(
+            latitude=42.358,
+            longitude=-71.095,
+            zoom=11,
+            pitch=0,
+        ),
+        layers=[
+            pdk.Layer(
+                "ScatterplotLayer",
+                data=map_df,
+                get_position=["start station longitude", "start station latitude"],
+                get_color=[21, 101, 192, 180],
+                get_radius=300,
+                pickable=True,
+            )
+        ],
+        tooltip={"text": "{start station name}\nTrips: {trip_count}"},
+    ))
 
     st.markdown("---")
     st.subheader("Top 10 Stations")
