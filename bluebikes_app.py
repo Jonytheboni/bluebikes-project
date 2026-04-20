@@ -407,7 +407,7 @@ def main():
 
     # #[ST3] – sidebar with logo, navigation radio buttons, and global filters
     st.sidebar.image(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bluebikes_logo.svg/320px-Bluebikes_logo.svg.png",
+        "https://www.bluebikes.com/sites/default/files/bluebikes_logo.png",
         use_container_width=True,
     )
     st.sidebar.title("Blue Bikes Explorer")
