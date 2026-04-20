@@ -273,7 +273,7 @@ def show_stations(df):
     st.pyplot(fig2)
 
     # Pivot table with formatted duration
-    st.subheader("Average Duration per Station (Top 20 by trips)")
+    st.subheader("Stations with the Longest Average Trip Duration")
 
     # #[LISTCOMP] – list comprehension to format the duration column for display
     top20 = summary["pivot"].nlargest(20, "trip_count").copy()
