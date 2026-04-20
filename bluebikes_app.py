@@ -266,7 +266,7 @@ def show_map(df):
     st.title("Map of Ride Start Locations")
     st.write(
         "Each dot is a Blue Bikes station. Bigger dots mean more trips started there. "
-        "Hover over any dot to see the station name and trip count."
+        "Scroll around to see the station name and trip count."
     )
 
     # #[FUNCCALL2] – calling get_top_stations again (map page)
