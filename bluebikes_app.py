@@ -174,7 +174,7 @@ def show_overview(df):
 
     # #[CHART2] – Grouped bar chart: Subscriber vs Customer trips by day of week
     st.subheader("Subscribers vs. Casual Riders by Day of Week")
-    st.write("I wanted to see whether the weekday vs. weekend pattern was different for commuters and casual riders.")
+    st.write("I wanted to see whether the weekday vs weekend pattern was different for commuters and casual riders.")
 
     sub_counts = df[df["usertype"] == "Subscriber"]["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
     cus_counts = df[df["usertype"] == "Customer"]["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
