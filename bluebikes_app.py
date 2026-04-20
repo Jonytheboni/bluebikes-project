@@ -42,7 +42,7 @@ st.set_page_config(
 def load_data(file_id):
     """Load the Blue Bikes Excel file and engineer useful columns."""
     url = f"https://drive.google.com/uc?export=download&id={file_id}"
-    df = pd.read_csv(url)
+    df = pd.read_csv(url, encoding="latin-1")
     df["starttime"] = pd.to_datetime(df["starttime"])
 
     # Convert trip duration from seconds to minutes  #[COLUMNS]
