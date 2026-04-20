@@ -47,7 +47,8 @@ def load_data(file_id):
     df["duration_min"] = df["tripduration"] / 60
 
     # Parse the starttime column – format="mixed" handles slight variations in the timestamps  #[COLUMNS]
-    df["starttime"] = pd.to_datetime(df["starttime"], format="%Y-%m-%d %H:%M:%S.%f", errors="coerce")
+    df["starttime"] = pd.to_datetime(df["starttime"], errors="coerce")
+    df = df.dropna(subset=["starttime"])
 
     # Pull out day of week and hour so we can group by them later  #[COLUMNS]
     df["day_of_week"] = df["starttime"].dt.day_name()
