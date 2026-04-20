@@ -197,8 +197,8 @@ def show_overview(df):
     st.pyplot(fig4)
 
     st.write(
-    "Subscribers ride heavily on weekdays, confirming commuter behavior. "
-    "Casual customers peak on weekends, suggesting recreational use."
+    "Subscribers ride more heavily on weekdays, which confirms commuter behavior. "
+    "Casual customers peak on weekends, therefore suggesting recreational use."
 )
 
 
