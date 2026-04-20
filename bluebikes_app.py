@@ -294,7 +294,7 @@ def show_map(df):
         "start station latitude": "lat",
         "start station longitude": "lon",
     })
-    st.map(map_df, latitude="lat", longitude="lon", size="radius", color="#1565C0")
+    st.map(map_df, latitude="lat", longitude="lon")
 
     st.markdown("---")
     st.subheader("Top 10 Stations")
