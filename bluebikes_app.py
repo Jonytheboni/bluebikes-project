@@ -172,7 +172,7 @@ def show_overview(df):
     st.pyplot(fig1)
 
     st.write(
-        "Weekdays are clearly busier, which makes sense — a lot of riders are probably "
+        "Weekdays are clearly busier, which makes sense since a lot of riders are probably "
         "commuting to work or school."
     )
 
