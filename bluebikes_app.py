@@ -24,7 +24,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pydeck as pdk
 
-# Google Drive file ID for 202009-bluebikes-tripdata.csv
+# Google Drive file ID for the dataset (202009-bluebikes-tripdata.csv)
 DRIVE_FILE_ID = "1fUkI9iB7Q-5SyB5XaEnZuI8VtHqD-Wor"
 
 # Days in correct order for charts
