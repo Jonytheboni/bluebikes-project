@@ -179,7 +179,7 @@ def show_overview(df):
     subscriber_count = (df["usertype"] == "Subscriber").sum()
     customer_count = (df["usertype"] == "Customer").sum()
 
-    fig5, ax5 = plt.subplots(figsize=(5, 5))
+    fig5, ax5 = plt.subplots(figsize=(3.5, 3.5))
     ax5.pie(
         [subscriber_count, customer_count],
         labels=["Subscriber", "Customer"],
