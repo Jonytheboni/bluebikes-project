@@ -272,23 +272,6 @@ def show_stations(df):
     plt.tight_layout()
     st.pyplot(fig2)
 
-    # Pivot table with formatted duration
-    st.subheader("Top Busiest Stations and their Average Trip Duration")
-
-    # #[LISTCOMP] – list comprehension to format the duration column for display
-    top20 = summary["pivot"].nlargest(20, "trip_count").copy()
-    top20["avg_duration_formatted"] = [format_duration(m) for m in top20["avg_duration_min"]]
-    top20["trip_count"] = top20["trip_count"].astype(int)
-
-    display_df = top20[["start station name", "trip_count", "avg_duration_formatted"]].rename(columns={
-        "start station name": "Station",
-        "trip_count": "Total Trips",
-        "avg_duration_formatted": "Avg Duration",
-    })
-    display_df["Total Trips"] = display_df["Total Trips"].astype(str)
-    display_df.index = range(1, len(display_df) + 1)
-    st.dataframe(display_df, use_container_width=True)
-
 
 def show_map(df):
     """Show the PyDeck map of station locations."""
