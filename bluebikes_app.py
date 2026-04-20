@@ -200,6 +200,32 @@ def show_overview(df):
     "Subscribers ride more heavily on weekdays, which confirms commuter behavior. "
     "Casual customers peak on weekends, therefore suggesting recreational use."
 )
+    st.markdown("---")
+
+    # Pie chart: Subscriber vs Customer split
+    st.subheader("Rider Type Split")
+    st.write("How does the overall split between subscribers and casual riders look?")
+
+    subscriber_count = (df["usertype"] == "Subscriber").sum()
+    customer_count = (df["usertype"] == "Customer").sum()
+
+    fig5, ax5 = plt.subplots(figsize=(5, 5))
+    ax5.pie(
+        [subscriber_count, customer_count],
+        labels=["Subscriber", "Customer"],
+        colors=["#1565C0", "#E65100"],
+        autopct="%1.1f%%",
+        startangle=90,
+        wedgeprops={"edgecolor": "white", "linewidth": 2},
+    )
+    ax5.set_title("Subscriber vs. Customer Split – Sept 2020", fontweight="bold")
+    st.pyplot(fig5)
+
+    st.write(
+        f"Out of {len(df):,} trips, {subscriber_count:,} were made by subscribers "
+        f"and {customer_count:,} by casual customers. "
+        "Subscribers make up the large majority of rides."
+    )
 
 
 def show_stations(df):
