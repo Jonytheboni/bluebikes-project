@@ -172,31 +172,31 @@ def show_overview(df):
 
     st.markdown("---")
 
-# #[CHART2] – Grouped bar chart: Subscriber vs Customer trips by day of week
-st.subheader("Subscribers vs. Casual Riders by Day of Week")
-st.write("I wanted to see whether the weekday vs. weekend pattern was different for commuters and casual riders.")
+    # #[CHART2] – Grouped bar chart: Subscriber vs Customer trips by day of week
+    st.subheader("Subscribers vs. Casual Riders by Day of Week")
+    st.write("I wanted to see whether the weekday vs. weekend pattern was different for commuters and casual riders.")
 
-sub_counts = df[df["usertype"] == "Subscriber"]["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
-cus_counts = df[df["usertype"] == "Customer"]["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
+    sub_counts = df[df["usertype"] == "Subscriber"]["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
+    cus_counts = df[df["usertype"] == "Customer"]["day_of_week"].value_counts().reindex(DAY_ORDER).fillna(0)
 
-x = range(len(DAY_ORDER))
-width = 0.4
+    x = range(len(DAY_ORDER))
+    width = 0.4
 
-fig4, ax4 = plt.subplots(figsize=(10, 4))
-bars1 = ax4.bar([i - width/2 for i in x], sub_counts.values, width=width, label="Subscriber", color="#1565C0", edgecolor="white")
-bars2 = ax4.bar([i + width/2 for i in x], cus_counts.values, width=width, label="Customer", color="#E65100", edgecolor="white")
+    fig4, ax4 = plt.subplots(figsize=(10, 4))
+    bars1 = ax4.bar([i - width/2 for i in x], sub_counts.values, width=width, label="Subscriber", color="#1565C0", edgecolor="white")
+    bars2 = ax4.bar([i + width/2 for i in x], cus_counts.values, width=width, label="Customer", color="#E65100", edgecolor="white")
 
-ax4.set_xticks(list(x))
-ax4.set_xticklabels(DAY_ORDER)
-ax4.set_xlabel("Day of Week")
-ax4.set_ylabel("Number of Trips")
-ax4.set_title("Subscriber vs. Customer Trips by Day – Sept 2020", fontweight="bold")
-ax4.legend(title="Rider Type")
-ax4.spines[["top", "right"]].set_visible(False)
-plt.tight_layout()
-st.pyplot(fig4)
+    ax4.set_xticks(list(x))
+    ax4.set_xticklabels(DAY_ORDER)
+    ax4.set_xlabel("Day of Week")
+    ax4.set_ylabel("Number of Trips")
+    ax4.set_title("Subscriber vs. Customer Trips by Day – Sept 2020", fontweight="bold")
+    ax4.legend(title="Rider Type")
+    ax4.spines[["top", "right"]].set_visible(False)
+    plt.tight_layout()
+    st.pyplot(fig4)
 
-st.write(
+    st.write(
     "Subscribers ride heavily on weekdays, confirming commuter behavior. "
     "Casual customers peak on weekends, suggesting recreational use."
 )
