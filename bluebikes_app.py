@@ -166,8 +166,8 @@ def show_overview(df):
     st.pyplot(fig1)
 
     st.write(
-        "Weekdays are clearly busier, which makes sense since a lot of riders are probably "
-        "commuting to work or school."
+        "On average, people tended to ride more during the weekend than on weekdays, which surprised me since a big portion or riders must ride to  "
+        "commute to work or school."
     )
 
     st.markdown("---")
