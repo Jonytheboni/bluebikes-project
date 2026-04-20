@@ -453,7 +453,7 @@ def main():
 
     page = st.sidebar.radio(
         "Navigate to:",
-        ["Overview", "Station Analysis", "Map", "Ride Patterns"],
+        ["Overview", "Station Analysis", "Map", "Ride Patterns", "Data Explorer"],
     )
 
     st.sidebar.markdown("---")
@@ -490,7 +490,8 @@ def main():
         show_map(df)
     elif page == "Ride Patterns":
         show_patterns(df)
-
+    elif page == "Data Explorer":
+        show_data_explorer(df)
 
 if __name__ == "__main__":
     main()
