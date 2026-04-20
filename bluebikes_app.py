@@ -317,7 +317,7 @@ def show_map(df):
         layers=[layer],
         initial_view_state=view_state,
         tooltip=tooltip,
-        map_style="mapbox://styles/mapbox/light-v10",
+        map_style="road",
     ))
 
     st.markdown("---")
