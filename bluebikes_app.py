@@ -129,7 +129,7 @@ def show_overview(df):
         "Blue Bikes is Boston's public bike-share program. "
         "This app looks at rides taken during September 2020, when the city was still "
         "figuring out how to get around during the pandemic. "
-        "Use the sidebar to filter by rider type and trip length."
+        "You can use the sidebar to filter by rider type and trip length."
     )
 
     # Four summary numbers at the top
