@@ -294,6 +294,7 @@ def show_map(df):
         "start station latitude": "lat",
         "start station longitude": "lon",
     })
+    map_df = map_df.dropna(subset=["lat", "lon"])
     st.map(map_df, latitude="lat", longitude="lon")
 
     st.markdown("---")
