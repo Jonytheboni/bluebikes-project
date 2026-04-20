@@ -43,7 +43,7 @@ def load_data(file_id):
     """Load the Blue Bikes Excel file and engineer useful columns."""
     url = f"https://drive.google.com/uc?export=download&id={file_id}"
     df = pd.read_csv(url, encoding="latin-1")
-    df["starttime"] = pd.to_datetime(df["starttime"])
+    df["starttime"] = pd.to_datetime(df["starttime"], infer_datetime_format=True, errors="coerce")
 
     # Convert trip duration from seconds to minutes  #[COLUMNS]
     df["duration_min"] = df["tripduration"] / 60
