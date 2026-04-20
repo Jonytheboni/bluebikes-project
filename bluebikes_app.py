@@ -5,12 +5,12 @@ Data: Blue Bikes Boston Trips from September 2020
 URL: "https://cs230-final-project-bluebikes.streamlit.app/"
 
 Description:
-    This program looks at Blue Bikes trip data from September 2020 in Boston.
-    I wanted to explore how people were using the bike-share system during the
-    pandemic, and whether commuters and casual riders behaved differently.
-    The app lets users filter trips by rider type and duration, see which
-    stations are the busiest, check out an interactive map of ride locations,
-    and explore when during the day people tend to ride.
+This program looks at Blue Bikes trip data from September 2020 in Boston.
+I wanted to show how people were using the bike-share system during the
+pandemic, and whether commuters and casual riders behaved differently.
+The app lets users filter trips by rider type and duration, see which
+stations are the busiest, check out an interactive map of ride locations,
+and explore when during the day people tend to ride.
 
 References:
     - Streamlit documentation: https://docs.streamlit.io
@@ -31,9 +31,7 @@ DRIVE_FILE_ID = "1fUkI9iB7Q-5SyB5XaEnZuI8VtHqD-Wor"
 DAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 
-# ─────────────────────────────────────────────
 #  DATA LOADING
-# ─────────────────────────────────────────────
 
 @st.cache_data
 def load_data(file_id):
@@ -60,9 +58,7 @@ def load_data(file_id):
     return df
 
 
-# ─────────────────────────────────────────────
 #  HELPER FUNCTIONS
-# ─────────────────────────────────────────────
 
 # #[FUNC2P] – two parameters, max_duration has a default value
 def filter_trips(df, user_type="All", max_duration=60):
@@ -118,9 +114,7 @@ def get_station_summary(df):
 format_duration = lambda mins: f"{int(mins // 60)}h {int(mins % 60)}m" if mins >= 60 else f"{int(mins)}m"
 
 
-# ─────────────────────────────────────────────
 #  PAGE FUNCTIONS
-# ─────────────────────────────────────────────
 
 def show_overview(df):
     """Show the Overview page with KPI cards and a bar chart by day of week."""
@@ -205,7 +199,7 @@ def show_stations(df):
         short = station[:35] + "..." if len(station) > 35 else station
         station_labels.append(short)
 
-    # #[CHART2] – horizontal bar chart (different from the vertical one on Overview)
+    # #[CHART2] – horizontal bar chart
     st.subheader(f"Top {n} Start Stations")
     fig2, ax2 = plt.subplots(figsize=(9, n * 0.5 + 1))
     y_pos = range(len(top_start))
@@ -375,9 +369,7 @@ def show_patterns(df):
     st.info(f"Peak hour overall: {peak_hour}:00 – {peak_hour + 1}:00")
 
 
-# ─────────────────────────────────────────────
 #  MAIN
-# ─────────────────────────────────────────────
 
 def main():
     """Main function – sets up the page, sidebar, loads data, and routes to pages."""
