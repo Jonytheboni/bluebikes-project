@@ -118,7 +118,7 @@ format_duration = lambda mins: f"{int(mins // 60)}h {int(mins % 60)}m" if mins >
 
 def show_overview(df):
     """Show the Overview page with KPI cards and a bar chart by day of week."""
-    st.title("Blue Bikes Trips in September 2020")
+    st.title("Blue Bikes Trips Data Explorer")
     st.write(
         "Blue Bikes is Boston's public bike-share program. "
         "This app looks at rides taken during September 2020, when the city was still "
