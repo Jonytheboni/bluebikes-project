@@ -1,8 +1,8 @@
 """
 Name: Joao Pereira
-CS230
+Class: CS230-2
 Data: Blue Bikes Boston Trips from September 2020
-URL: 
+URL: "https://cs230-final-project-bluebikes.streamlit.app/"
 
 Description:
     This program looks at Blue Bikes trip data from September 2020 in Boston.
