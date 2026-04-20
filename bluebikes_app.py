@@ -325,16 +325,19 @@ def show_map(df):
             latitude=42.358,
             longitude=-71.095,
             zoom=11,
-            pitch=0,
+            pitch=45,
         ),
         layers=[
             pdk.Layer(
-                "ScatterplotLayer",
+                "ColumnLayer",
                 data=map_df,
                 get_position=["start station longitude", "start station latitude"],
-                get_color=[255, 0, 0, 255],
-                get_radius=300,
+                get_elevation="trip_count",
+                elevation_scale=0.5,
+                radius=100,
+                get_fill_color=[21, 101, 192, 200],
                 pickable=True,
+                auto_highlight=True,
             )
         ],
         tooltip={"text": "{start station name}\nTrips: {trip_count}"},
