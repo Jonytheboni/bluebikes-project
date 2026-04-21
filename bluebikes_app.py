@@ -9,7 +9,7 @@ This program looks at Blue Bikes trip data from September 2020 in Boston.
 I wanted to show how people were using the bike-share system during the
 pandemic, and whether commuters and casual riders behaved differently.
 The app lets users filter trips by rider type and duration, see which
-stations are the busiest, check out an interactive map of ride locations,
+stations are the busiest, check out a map of ride locations,
 and explore when during the day people tend to ride.
 
 References:
